@@ -1,0 +1,249 @@
+# npm resolution error report
+
+2021-05-20T15:12:08.854Z
+
+While resolving: hospital@0.0.1
+Found: react@17.0.1
+node_modules/react
+  react@"17.0.1" from the root project
+  peer react@">= 16.0 || < 17.0" from react-native-maps@0.28.0
+  node_modules/react-native-maps
+    react-native-maps@"*" from the root project
+  peer react@"17.0.1" from react-native@0.64.0
+  node_modules/react-native
+    react-native@"0.64.0" from the root project
+    peer react-native@">= 0.51" from react-native-maps@0.28.0
+    node_modules/react-native-maps
+      react-native-maps@"*" from the root project
+  peer react@">=16.5.1" from react-native-web@0.11.7
+  node_modules/react-native-web
+    peer react-native-web@"^0.11" from react-native-maps@0.28.0
+    node_modules/react-native-maps
+      react-native-maps@"*" from the root project
+
+Could not resolve dependency:
+peer react@"17.0.2" from react-dom@17.0.2
+node_modules/react-dom
+  peer react-dom@">=16.5.1" from react-native-web@0.11.7
+  node_modules/react-native-web
+    peer react-native-web@"^0.11" from react-native-maps@0.28.0
+    node_modules/react-native-maps
+      react-native-maps@"*" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force, or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
+
+Raw JSON explanation object:
+
+{
+  "code": "ERESOLVE",
+  "current": {
+    "name": "react",
+    "version": "17.0.1",
+    "whileInstalling": {
+      "name": "hospital",
+      "version": "0.0.1",
+      "path": "A:\\health\\hospital"
+    },
+    "location": "node_modules/react",
+    "dependents": [
+      {
+        "type": "prod",
+        "name": "react",
+        "spec": "17.0.1",
+        "from": {
+          "location": "A:\\health\\hospital"
+        }
+      },
+      {
+        "type": "peer",
+        "name": "react",
+        "spec": ">= 16.0 || < 17.0",
+        "from": {
+          "name": "react-native-maps",
+          "version": "0.28.0",
+          "whileInstalling": {
+            "name": "hospital",
+            "version": "0.0.1",
+            "path": "A:\\health\\hospital"
+          },
+          "location": "node_modules/react-native-maps",
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "react-native-maps",
+              "spec": "*",
+              "from": {
+                "location": "A:\\health\\hospital"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "react",
+        "spec": "17.0.1",
+        "from": {
+          "name": "react-native",
+          "version": "0.64.0",
+          "whileInstalling": {
+            "name": "hospital",
+            "version": "0.0.1",
+            "path": "A:\\health\\hospital"
+          },
+          "location": "node_modules/react-native",
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "react-native",
+              "spec": "0.64.0",
+              "from": {
+                "location": "A:\\health\\hospital"
+              }
+            },
+            {
+              "type": "peer",
+              "name": "react-native",
+              "spec": ">= 0.51",
+              "from": {
+                "name": "react-native-maps",
+                "version": "0.28.0",
+                "whileInstalling": {
+                  "name": "hospital",
+                  "version": "0.0.1",
+                  "path": "A:\\health\\hospital"
+                },
+                "location": "node_modules/react-native-maps",
+                "dependents": [
+                  {
+                    "type": "prod",
+                    "name": "react-native-maps",
+                    "spec": "*",
+                    "from": {
+                      "location": "A:\\health\\hospital"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "react",
+        "spec": ">=16.5.1",
+        "from": {
+          "name": "react-native-web",
+          "version": "0.11.7",
+          "whileInstalling": {
+            "name": "hospital",
+            "version": "0.0.1",
+            "path": "A:\\health\\hospital"
+          },
+          "location": "node_modules/react-native-web",
+          "dependents": [
+            {
+              "type": "peer",
+              "name": "react-native-web",
+              "spec": "^0.11",
+              "from": {
+                "name": "react-native-maps",
+                "version": "0.28.0",
+                "whileInstalling": {
+                  "name": "hospital",
+                  "version": "0.0.1",
+                  "path": "A:\\health\\hospital"
+                },
+                "location": "node_modules/react-native-maps",
+                "dependents": [
+                  {
+                    "type": "prod",
+                    "name": "react-native-maps",
+                    "spec": "*",
+                    "from": {
+                      "location": "A:\\health\\hospital"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "currentEdge": {
+    "type": "prod",
+    "name": "react",
+    "spec": "17.0.1",
+    "from": {
+      "location": "A:\\health\\hospital"
+    }
+  },
+  "edge": {
+    "type": "peer",
+    "name": "react",
+    "spec": "17.0.2",
+    "error": "INVALID",
+    "from": {
+      "name": "react-dom",
+      "version": "17.0.2",
+      "whileInstalling": {
+        "name": "hospital",
+        "version": "0.0.1",
+        "path": "A:\\health\\hospital"
+      },
+      "location": "node_modules/react-dom",
+      "dependents": [
+        {
+          "type": "peer",
+          "name": "react-dom",
+          "spec": ">=16.5.1",
+          "from": {
+            "name": "react-native-web",
+            "version": "0.11.7",
+            "whileInstalling": {
+              "name": "hospital",
+              "version": "0.0.1",
+              "path": "A:\\health\\hospital"
+            },
+            "location": "node_modules/react-native-web",
+            "dependents": [
+              {
+                "type": "peer",
+                "name": "react-native-web",
+                "spec": "^0.11",
+                "from": {
+                  "name": "react-native-maps",
+                  "version": "0.28.0",
+                  "whileInstalling": {
+                    "name": "hospital",
+                    "version": "0.0.1",
+                    "path": "A:\\health\\hospital"
+                  },
+                  "location": "node_modules/react-native-maps",
+                  "dependents": [
+                    {
+                      "type": "prod",
+                      "name": "react-native-maps",
+                      "spec": "*",
+                      "from": {
+                        "location": "A:\\health\\hospital"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "peerConflict": null,
+  "strictPeerDeps": false,
+  "force": false
+}

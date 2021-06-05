@@ -1,0 +1,62 @@
+0 verbose cli [
+0 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+0 verbose cli   'C:\\Users\\Abel Luzemba\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'view',
+0 verbose cli   '--json',
+0 verbose cli   'react-native-circle-checkbox',
+0 verbose cli   'description',
+0 verbose cli   'dist-tags.latest',
+0 verbose cli   'homepage',
+0 verbose cli   'version'
+0 verbose cli ]
+1 info using npm@7.11.1
+2 info using node@v16.0.0
+3 timing npm:load:whichnode Completed in 3ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:C:\Users\Abel Luzemba\AppData\Roaming\npm\node_modules\npm\npmrc Completed in 2ms
+6 timing config:load:builtin Completed in 2ms
+7 timing config:load:cli Completed in 4ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:a:\health\hospital\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 0ms
+11 timing config:load:file:C:\Users\Abel Luzemba\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:C:\Users\Abel Luzemba\AppData\Roaming\npm\etc\npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 2ms
+18 timing config:load Completed in 15ms
+19 timing npm:load:configload Completed in 15ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 1ms
+22 timing npm:load:cleanupLog Completed in 3ms
+23 timing npm:load:configScope Completed in 1ms
+24 timing npm:load:projectScope Completed in 0ms
+25 timing npm:load Completed in 24ms
+26 timing config:load:flatten Completed in 3ms
+27 timing command:view Completed in 2195ms
+28 verbose type system
+29 verbose stack FetchError: request to https://registry.npmjs.org/react-native-circle-checkbox failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+29 verbose stack     at ClientRequest.<anonymous> (C:\Users\Abel Luzemba\AppData\Roaming\npm\node_modules\npm\node_modules\minipass-fetch\lib\index.js:97:14)
+29 verbose stack     at ClientRequest.emit (node:events:365:28)
+29 verbose stack     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+29 verbose stack     at TLSSocket.emit (node:events:377:35)
+29 verbose stack     at emitErrorNT (node:internal/streams/destroy:193:8)
+29 verbose stack     at emitErrorCloseNT (node:internal/streams/destroy:158:3)
+29 verbose stack     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+30 verbose cwd a:\health\hospital
+31 verbose Windows_NT 10.0.19042
+32 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Abel Luzemba\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "view" "--json" "react-native-circle-checkbox" "description" "dist-tags.latest" "homepage" "version"
+33 verbose node v16.0.0
+34 verbose npm  v7.11.1
+35 error code ENOTFOUND
+36 error syscall getaddrinfo
+37 error errno ENOTFOUND
+38 error network request to https://registry.npmjs.org/react-native-circle-checkbox failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+39 error network This is a problem related to network connectivity.
+39 error network In most cases you are behind a proxy or have bad network settings.
+39 error network
+39 error network If you are behind a proxy, please make sure that the
+39 error network 'proxy' config is set properly.  See: 'npm help config'
+40 verbose exit 1
