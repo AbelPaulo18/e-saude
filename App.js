@@ -18,7 +18,9 @@ const Apps = (navigation)=> {
   return(
 
     <NavigationContainer  independent={true} >
-      <Drawer.Navigator initialRouteName = 'Tabs' >  
+      <Drawer.Navigator initialRouteName = 'Tabs'
+       drawerContent = { props => <DrawerContainer {...props} />}
+       >  
 
         <Drawer.Screen
                name='Tabs'

@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React, { Component, useState } from 'react';
-import { Image, Text,StyleSheet,TextInput, View, TouchableOpacity,KeyboardAvoidingView } from 'react-native';
+import { Image, Text,StyleSheet,TextInput, Platform,View, TouchableOpacity,KeyboardAvoidingView } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather'
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-const Farmacy = ()=>{
+const Farmacy = ({navigation})=>{
 
    const [searchActive, setSearchActive ] = useState(false)
 
@@ -11,25 +12,66 @@ const Farmacy = ()=>{
       
       <KeyboardAvoidingView style={styles.body}>
 
-      <View style={styles.Container_search}>
+<View style={styles.header}>
 
-         <TextInput
-            placeholder = 'Talk your thing'
-            style ={styles.search}            
-         />
-         <TouchableOpacity style={styles.botao}>
-            <Image
-            source={require('../Images/search.png')}
-            resizeMode = 'contain'
-            style={{
-               height: 30,
-               width: 30,
-               tintColor: '#081B33'
-            }}
-         />
-         </TouchableOpacity>
-         
-      </View>
+<TouchableOpacity style={{
+   alignItems: 'center',
+   justifyContent:'center'
+}}
+onPress ={()=>{navigation.openDrawer()}}
+ >
+   <Feather
+      name = 'menu'
+      size={32}
+   />
+</TouchableOpacity>
+
+
+<View style={{
+   alignItems: 'center',
+   justifyContent:'flex-end'
+}}>
+   <Image
+      source={require('./logo/phone_plus.png')}
+      style={{
+         height: 32,
+         width: 32
+      }}
+   />
+<Text>é-Saúde</Text>
+
+</View>
+
+<TouchableOpacity style={{
+   alignItems: 'center',
+   justifyContent:'center'
+}} 
+   onPress={()=> setSearchActive(!searchActive)}
+>
+   <Feather
+      name = 'search'
+      size={32}
+   />
+</TouchableOpacity>
+
+
+</View>
+
+{
+              searchActive ? (
+                 
+               <View style={styles.containerSearch}>
+               <TextInput
+               style={styles.Search}
+                  placeholder= 'Pesquisar '
+               />
+               </View>
+
+              )
+              :
+              null
+           }
+
 
       <View style ={styles.Container}>
 
@@ -109,11 +151,37 @@ const styles = StyleSheet.create({
    body: {
       flex: 1,
       backgroundColor:'#fff',
-      paddingTop: 20,
-      paddingLeft: 10,
-      paddingRight: 10, 
+      paddingLeft: 5,
+      paddingRight: 5, 
       
    },
+
+   
+
+   header:{
+
+      padding: 8,
+      width:'100%',
+      borderBottomWidth: 1,
+      backgroundColor: '#fff',
+      paddingTop: Platform.OS == 'ios'? 16 : 0,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+      borderBottomColor: '#ddd',
+
+
+   },
+   containerSearch:{
+      
+      width: '100%',
+      justifyContent:'center',
+      alignItems: 'center',
+      padding: 8,
+      marginTop: 8,
+     
+   },
+
    Container_search:{
    
       height: 40,
@@ -124,6 +192,16 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
 
    },
+   Search:{
+      backgroundColor: '#fff',
+      width: '80%',
+      paddingLeft: 16,
+      height: 40,
+      borderBottomWidth: 2,
+      borderRadius: 4,
+      elevation: 5,
+      borderBottomColor: 'lightgreen'
+      },
    search:{
       
       flex: 16,

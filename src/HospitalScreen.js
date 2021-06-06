@@ -10,6 +10,10 @@ import FindScreen from './Consult';
 
 const HospitalScreen = ({navigation}) => {
 
+   const MapPress = () => {
+      navigation.navigate('Maps')
+   }
+
    const [searchActive, setSearchActive ] = useState(false)
 
    const [data, setData] = useState([
@@ -123,12 +127,13 @@ const HospitalScreen = ({navigation}) => {
            }
             
            
-
-            <ScrollView style={{width: '100%', marginTop: 8, marginBottom: 80 }}>
+            <ScrollView style={{width: '100%', marginTop: 8, marginBottom: 62 }}>
             
                { 
                   data.map( (item, index) => (
-                     <TouchableOpacity style={styles.containerItems} key={`${item.title}`}>
+                     <TouchableOpacity style={styles.containerItems} key={`${item.title}`} 
+                     onPress={MapPress}
+                     >
 
                   <View style={styles.logoItem}>
                      <Image

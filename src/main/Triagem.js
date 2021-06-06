@@ -56,11 +56,12 @@ const TriagemScreen = ({navigation}) => {
    alignItems: 'center',
    justifyContent:'center'
 }}
-onPress ={()=>{navigation.openDrawer()}}
+   
  >
    <Feather
       name = 'menu'
       size={32}
+      onPress ={ ()=> {navigation.openDrawer()}}
    />
 </TouchableOpacity>
 
