@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Text,Image,TouchableOpacity,Platform,ScrollView ,StyleSheet, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import MapView from 'react-native-maps';
+
 
 const LocationMap = ({navigation})=> {
    return(
@@ -52,7 +54,14 @@ const LocationMap = ({navigation})=> {
                </View>
 
       <View style={styles.Map}>
-
+      <MapView
+    initialRegion={{
+      latitude: 37.78825,
+      longitude: -122.4324,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }}
+  />
       </View>
 
          <ScrollView style={{flex: 1, borderTopWidth: 1, borderColor: '#eee'}}>
