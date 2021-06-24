@@ -7,7 +7,7 @@ import Front from '../main/Front';
 import LogScreen from '../main/Signlog';
 import Apps from '../../App';
 import SignIn from './SignIn';
-import TriagemScreen from './Triagem';
+
 
 
 const Stack = createStackNavigator ();

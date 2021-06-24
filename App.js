@@ -1,20 +1,21 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DarkTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Tabs from './src/stack/Index';
 import Blue from './src/stack/SecondaryScreen';
-import Maps from './src/stack/Hmaps';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Feather from 'react-native-vector-icons/Feather';
-import {Button} from 'react-native';
 import LocationMap from './src/main/Hlocation';
 import DrawerContainer from './src/Drawer/DrawerContent';
+import FamilyScreens from './src/Drawer/DrawerScreens/FamilyMembers';
+import Historial from './src/Drawer/DrawerScreens/Historic';
+import Bookmark from './src/Drawer/DrawerScreens/Bookmark';
+import Settings from './src/Drawer/DrawerScreens/Settings';
+import HospitalScreen from './src/HospitalScreen';
 
 const Drawer = createDrawerNavigator();
-const SecStack = createStackNavigator();
 
-const Apps = (navigation)=> {
+const Apps = ()=> {
   return(
 
     <NavigationContainer  independent={true} >
@@ -31,6 +32,17 @@ const Apps = (navigation)=> {
             }
          }
             />
+
+         <Drawer.Screen
+               name='HospitalScreen'
+               component={HospitalScreen}
+                options ={
+            {
+               header : ()=> null
+            }
+         }
+            />
+
         <Drawer.Screen
                name='Blue'
                component={Blue}
@@ -46,6 +58,47 @@ const Apps = (navigation)=> {
             }
          }
             />
+       
+        <Drawer.Screen
+               name='Family'
+               component={FamilyScreens}
+               options ={
+            {
+               header: ()=> null
+            }
+         }
+            />
+      
+        <Drawer.Screen
+               name='Historial'
+               component={Historial}
+               options ={
+            {
+               header: ()=> null
+            }
+         }
+            />
+         
+        <Drawer.Screen
+               name='Bookmark'
+               component={Bookmark}
+               options ={
+            {
+               header: ()=> null
+            }
+         }
+            />
+         
+        <Drawer.Screen
+               name='Settings'
+               component={Settings}
+               options ={
+            {
+               header: ()=> null
+            }
+         }
+            />
+        
          
 
       </Drawer.Navigator>

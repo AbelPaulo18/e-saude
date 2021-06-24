@@ -14,7 +14,7 @@ const HomeScreen = ({navigation}) => {
    }
 
    const MapPress = () => {
-      navigation.navigate('Maps')
+      navigation.navigate('HospitalScreen')
    }
 
    const [searchActive, setSearchActive ] = useState(false)
@@ -118,12 +118,12 @@ const HomeScreen = ({navigation}) => {
                 textStyle={{
                    fontSize: 18
                 }}
-               
+                
               />
             </View>
             
                <View style={styles.itemContainers}>
-                  <TouchableOpacity style={[styles.item, {backgroundColor: 'rgb(22,173,225)'}]} onPress= {MapPress}>
+                  <TouchableOpacity style={[styles.item, {backgroundColor: 'rgb(22,173,225)'}]} onPress= {() => {navigation.navigate('HospitalScreen')}}>
                      <FontAwesome5Icon
                         name = 'hospital'
                         size={40}

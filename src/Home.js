@@ -2,17 +2,13 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Image,TouchableOpacity, TextInput} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer,DarkTheme } from '@react-navigation/native';
 
 import Login from './main/Login';
 import Apps from '../App';
-import Blue from '../src/stack/SecondaryScreen';
-import TriagemScreen from './main/Triagem';
-
+import HospitalScreen from './HospitalScreen';
 
 const Stack = createStackNavigator();
-
-const SecStack = createStackNavigator();
 
 const MainP = () =>{
    
@@ -29,6 +25,7 @@ const MainP = () =>{
             }
          }
             />
+            
 
             <Stack.Screen
                name='Apps'

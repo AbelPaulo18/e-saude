@@ -6,6 +6,8 @@ import {
    DrawerItem
 } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -50,7 +52,8 @@ const DrawerContainer = (props)=>{
            </View>
 
             <View style={{width: '90%',padding: 8,alignContent: 'center' }}>
-            <TouchableOpacity style= {{width: '100%', flexDirection: 'row', alignItems:'center',  marginBottom: 16,borderRadius: 4,padding: 8,borderBottomWidth:1 }} >
+            
+            <TouchableOpacity style={styles.screens} onPress={()=>{props.navigation.navigate('Tabs')}}>
               <Icon
                  name = 'home-outline'
                  size = {26}
@@ -58,23 +61,49 @@ const DrawerContainer = (props)=>{
               />
 
                  <Text style={styles.btnText}> Home </Text>
-              </TouchableOpacity><TouchableOpacity style= {{width: '100%', flexDirection: 'row', alignItems:'center',  marginBottom: 16,borderRadius: 4,padding: 8,borderBottomWidth:1 }} >
+              </TouchableOpacity>
+              
+              <TouchableOpacity style={styles.screens} onPress={()=>{props.navigation.navigate('Family')}}>
+              <FontAwesome5
+                 name = 'users'
+                 size = {22}
+                 color = {'grey'}
+              />
+
+                 <Text style={styles.btnText}> Agregado Familiar </Text>
+              </TouchableOpacity> 
+              
+              <TouchableOpacity style= {styles.screens} onPress={()=>{props.navigation.navigate('Historial')}}>
+              <Icon
+                 name = 'history'
+                 size = {26}
+                 color = {'grey'}
+              />
+
+                 <Text style={styles.btnText}> Histórico </Text>
+              </TouchableOpacity>
+            
+              <TouchableOpacity style= {styles.screens} onPress={()=>{props.navigation.navigate('Bookmark')}}>
               <Icon
                  name = 'bookmark-outline'
                  size = {26}
                  color = {'grey'}
               />
 
-                 <Text style={styles.btnText}> Home </Text>
-              </TouchableOpacity><TouchableOpacity style= {{width: '100%', flexDirection: 'row', alignItems:'center',  marginBottom: 16,borderRadius: 4,padding: 8,borderBottomWidth:1 }} >
-              <Icon
-                 name = 'home'
-                 size = {26}
+                 <Text style={styles.btnText}> Marcações </Text>
+              </TouchableOpacity>
+            
+              <TouchableOpacity style= {styles.screens} onPress={()=>{props.navigation.navigate('Settings')}}>
+              <Feather
+                 name = 'settings'
+                 size = {24}
                  color = {'grey'}
               />
 
-                 <Text style={styles.btnText}> Contactar SpiderMan </Text>
+                 <Text style={styles.btnText}> definições </Text>
               </TouchableOpacity>
+            
+            
             </View>
               
               
@@ -88,11 +117,12 @@ const DrawerContainer = (props)=>{
             icon ={({size,color}) =>
                <Icon
                   name = 'exit-to-app'
-                  size= {23}
-                  color={'red'}
+                  size= {25}
+                  color={'grey'}
                />
             }
             label = 'Sign Out'
+            
          />
 
       </View>
@@ -100,8 +130,10 @@ const DrawerContainer = (props)=>{
 }
 
 export default DrawerContainer;
+
 const styles = StyleSheet.create({
    userInfoContainer:{
+      
       alignContent: 'center',
       justifyContent: 'center',
       padding: 8,
@@ -110,11 +142,23 @@ const styles = StyleSheet.create({
       
    },
    userContent:{
+      
       flexDirection: 'row',
       alignItems: 'center',
       width: '100%',
      
       },
+   screens:{
+      
+      width: '100%', 
+      flexDirection: 'row', 
+      alignItems:'center',
+      marginBottom: 16,
+      borderRadius: 4,
+      padding: 8,
+      borderBottomWidth:1
+
+   },
    userDescription:{
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
@@ -162,6 +206,8 @@ const styles = StyleSheet.create({
       
    },
    btnText:{
-      fontSize: 16
+      fontSize: 16,
+      marginLeft: 8,
+      textTransform:'capitalize',
    }
 })

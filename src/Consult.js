@@ -21,7 +21,7 @@ const ConsultScreen = ({navigation}) => {
             <View style={styles.Top}>
 
                <TextInput
-                  placeholder= 'TType something'
+                  placeholder= 'Seu Nome'
                />
 
             </View>
@@ -45,7 +45,7 @@ const ConsultScreen = ({navigation}) => {
                      }}>
 
                <TextInput
-                  placeholder= 'Type or not'
+                  placeholder= 'Start'
                     
                />
 
@@ -65,7 +65,7 @@ const ConsultScreen = ({navigation}) => {
                      }}>
 
                <TextInput
-                  placeholder= 'Type something'
+                  placeholder= 'End Date'
                   
                />
 
@@ -84,7 +84,7 @@ const ConsultScreen = ({navigation}) => {
                   
             <View style={styles.Top}>
                <TextInput
-                  placeholder= 'Type YOUR AGE'
+                  placeholder= 'Additional Info'
                   style ={{
                      fontFamily: 'sansSerif'
                   }}
@@ -108,6 +108,10 @@ const ConsultScreen = ({navigation}) => {
                   }}
                />
             </View>
+
+            <TouchableOpacity style={styles.finish}>
+               <Text style={styles.txtButtom}>Terminar Marcação</Text>
+            </TouchableOpacity>
 
          </View>
       );
@@ -151,11 +155,10 @@ const styles = StyleSheet.create({
      
       paddingLeft:16,
       borderRadius: 8,
-      height: 80,
       backgroundColor:'#fff',
       marginBottom: 16,
-      elevation:5
-
+      elevation:5,
+      
    },
 
    imagem:{
@@ -167,11 +170,23 @@ const styles = StyleSheet.create({
 
    content:{
 
-      
       width:250,
       paddingTop: 30,
       paddingLeft: 10,
       backgroundColor:'#fff',
 
+   },
+   finish:{
+      alignSelf: 'center',
+      marginTop: 16,
+      backgroundColor: '#fff',
+      padding: 12,
+      borderRadius: 4,
+      elevation: 2
+   },
+   txtButtom:{
+      textTransform: 'capitalize',
+      color: '#152642',
+      fontWeight: 'bold'
    }
 })

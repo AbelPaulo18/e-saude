@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Text,Image,TouchableOpacity,Platform,ScrollView ,StyleSheet, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import MapView from 'react-native-maps';
-
+//import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 const LocationMap = ({navigation})=> {
    return(
@@ -53,20 +53,23 @@ const LocationMap = ({navigation})=> {
                   <Text> Description and other cool things</Text> 
                </View>
 
-      <View style={styles.Map}>
+      <View style={styles.container}>
       <MapView
-    initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    }}
-  />
+        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+        style={styles.map}
+        region={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        }}
+      >
+      </MapView>
       </View>
 
          <ScrollView style={{flex: 1, borderTopWidth: 1, borderColor: '#eee'}}>
             <View style={styles.LocalInfo}>
-
+ 
                
                   <Text style={styles.priTxt}> Main text or Primary text </Text>
                   <Text style={styles.secTxt}> Description............ </Text>
@@ -103,6 +106,16 @@ const styles = StyleSheet.create({
       borderBottomColor: '#ddd',
 
    },
+   container: {
+      
+      height: 440,
+      width: 400,
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+    },
+    map: {
+      ...StyleSheet.absoluteFillObject,
+    },
 
    Map:{
 

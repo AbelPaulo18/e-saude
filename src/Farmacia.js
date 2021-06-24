@@ -1,12 +1,64 @@
 /* eslint-disable prettier/prettier */
 import React, { Component, useState } from 'react';
 import { Image, Text,StyleSheet,TextInput, Platform,View, TouchableOpacity,KeyboardAvoidingView } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather'
+import { ScrollView } from 'react-native-gesture-handler';
+import Feather from 'react-native-vector-icons/Feather';
+import TimedSlideshow from 'react-native-timed-slideshow';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const Farmacy = ({navigation})=>{
 
    const [searchActive, setSearchActive ] = useState(false)
+
+   const [data, setData] = useState([
+      {
+       uri: require('../Images/F1.jpeg'),
+       title: 'Panadol 500mg',
+       text: 'Farmácia Dos Anjos'
+      },
+      {
+       uri: require('../Images/F2.jpeg'),
+       title: 'Amoxaciclina 250mg',
+       text: 'Farmácia Orquídea'
+      },
+      {
+       uri: require('../Images/F3.jpeg'),
+       title: 'Paracetamol',
+       text: 'Mais vendido da Semana'
+      },
+      {
+       uri: require('../Images/F4.jpeg'),
+       title: 'Cloridrato Genérico',
+       text: 'Farmácia Lz'
+      },
+    ])
+
+   const [pharmacy, setpharmacy] = useState([
+      { 
+         name: 'Farmácia dos Anjos',
+         disponibilidade: '24/24',
+         endereco: 'Belas, Talatona, Luanda',
+         estado: 'Aberto'
+      },
+      {
+         name: 'Farmácia da Leoníldia',
+         disponibilidade: '24/24',
+         endereco: 'Golf 2, Kilamba kiaxi, Luanda',
+         estado: 'Aberto'
+      },
+      {
+         name: 'Farmácia do Sammuel',
+         disponibilidade: '24/24',
+         endereco: 'Calemba 2, Talatona, Luanda',
+         estado: 'Aberto'
+      },
+      {
+         name: 'Farmácia Maianga',
+         disponibilidade: '24/24',
+         endereco: 'Maianga, Maianga, Luanda',
+         estado: 'Aberto'
+      },
+   ])
 
    return(
       
@@ -72,73 +124,51 @@ onPress ={()=>{navigation.openDrawer()}}
               null
            }
 
+           <View style={{width: '100%', backgroundColor: 'grey',height: 250,marginBottom: 16}}>
+              <TimedSlideshow
+                 items ={data}
+                 extraSpacing = {50}
+                 duration ={ 3000 }
+                 footerStyle={
+                        {
+                           height: 130
+                        }
+                 }
+                titleStyle={{
+                   fontSize: 24
+                }}
+                textStyle={{
+                   fontSize: 18
+                }}
+               
+              />
+            </View>
 
+         <ScrollView>
+      {
+         pharmacy.map((item,index) =>(
+      
       <View style ={styles.Container}>
-
-         
             <Text style ={styles.title}>
-               Abel Paulo Farmacy
+               {item.name}
             </Text>
          
             <Text style ={styles.dxd}>
-            Horário : 14/7
+            Horário : <Text> {item.disponibilidade} </Text>
             </Text>
          
             <Text style ={styles.dxd}>
-            Endereço : 
+            Endereço : <Text> {item.endereco} </Text>
             </Text>
          
             <Text style ={styles.dxd}>
-            Estado: <Text style={{color: 'lightgreen'}}>Aberto</Text>
+            Estado: <Text style={{color: 'lightgreen'}}> {item.estado}</Text>
             </Text>
 
       </View>
-
-      <View style ={styles.Container}>
-
-         
-            <Text style ={styles.title}>
-               Abel Paulo Farmacy
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Horário : 14/7
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Endereço : Blalalalalal
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Estado: <Text style={{color: 'lightgreen'}}>Aberto</Text>
-            </Text>
-         
-         
-
-      </View>
-
-      <View style ={styles.Container}>
-
-         
-            <Text style ={styles.title}>
-               Abel Paulo Farmacy
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Horário : 14/7
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Endereço : Blalalalalal
-            </Text>
-         
-            <Text style ={styles.dxd}>
-            Estado: <Text style={{color: 'lightgreen'}}>Aberto</Text>
-            </Text>
-         
-         
-
-      </View>
+         ))
+      }
+      </ScrollView>
 
       </KeyboardAvoidingView>
    )
@@ -188,7 +218,7 @@ const styles = StyleSheet.create({
       width: '100%' ,
       paddingLeft:16,
       paddingRight:16,
-      marginBottom: 30,
+      marginBottom: 50,
       flexDirection: 'row'
 
    },
@@ -215,12 +245,12 @@ const styles = StyleSheet.create({
       
    },
    Container:{
-     height: '16%',
+    
       borderRadius: 8,
-      backgroundColor: '#fff',
-      elevation: 5,
+      backgroundColor: '#ffffff',
+      elevation: 2,
       padding: 8,
-      marginBottom: 16
+      marginBottom: 8
 
    }, 
    botao:{

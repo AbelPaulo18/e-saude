@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import ConsultScreen from '../Consult';
 import SettingsScreen from '../Settings';
-import HospitalScreen from '../main/Map';
+import HospitalScreen from '../src/HospitalScreen';
 import HomeScreen from '../Navig';
 import Farmacy from '../Farmacia';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
