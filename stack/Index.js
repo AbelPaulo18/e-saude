@@ -2,14 +2,12 @@
 import React from 'react';
 import { Text,Image,TouchableOpacity,View,StyleSheet , KeyboardAvoidingView} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 
-import ConsultScreen from '../Consult';
-import SettingsScreen from '../Settings';
+import ConsultScreen from '../src/Consult';
 import HospitalScreen from '../src/HospitalScreen';
-import HomeScreen from '../Navig';
-import Farmacy from '../Farmacia';
+import HomeScreen from '../src/Navig';
+import Farmacy from '../src/Farmacia';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
 const color = "#152642"

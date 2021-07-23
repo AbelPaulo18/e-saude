@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {NavigationContainer, DarkTheme} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import Tabs from './src/stack/Index';
-import Blue from './src/stack/SecondaryScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import Tabs from './stack/Index';
+
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import LocationMap from './src/main/Hlocation';
 import DrawerContainer from './src/Drawer/DrawerContent';
@@ -12,6 +11,8 @@ import Historial from './src/Drawer/DrawerScreens/Historic';
 import Bookmark from './src/Drawer/DrawerScreens/Bookmark';
 import Settings from './src/Drawer/DrawerScreens/Settings';
 import HospitalScreen from './src/HospitalScreen';
+import PerfilScreen from './src/OptionScreens/Perfil';
+import OptScreens from './src/OptionScreens/OptSecreens';
 
 const Drawer = createDrawerNavigator();
 
@@ -43,11 +44,6 @@ const Apps = ()=> {
          }
             />
 
-        <Drawer.Screen
-               name='Blue'
-               component={Blue}
-            
-            />
         <Drawer.Screen
                name='Maps'
                component={LocationMap}
@@ -98,7 +94,17 @@ const Apps = ()=> {
             }
          }
             />
-        
+       
+        <Drawer.Screen
+               name='OptScreens'
+               component={OptScreens}
+               options ={
+            {
+               header: ()=> null
+            }
+         }
+            />
+       
          
 
       </Drawer.Navigator>

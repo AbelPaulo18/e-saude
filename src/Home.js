@@ -1,3 +1,4 @@
+
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Image,TouchableOpacity, TextInput} from 'react-native';
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
        borderBottomColor: 'grey',
        marginBottom: 10,
        fontWeight: 'bold',
-       fontSize: 15
+       fontSize: 15 
 
    }
 

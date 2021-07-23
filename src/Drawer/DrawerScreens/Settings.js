@@ -5,6 +5,14 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import Feather from 'react-native-vector-icons/Feather'
 
 const Settings = ({navigation})=> {
+
+      const Setting = ()=>{
+         navigation.navigate('PerfilScreen')
+      }
+      const primaryColor = '#152642'
+
+      const secondaryColor = '#aaa'
+
    return(
       <View style={styles.body}>
          <View style={styles.header}>
@@ -38,28 +46,77 @@ const Settings = ({navigation})=> {
          </View>
       </View>
 
-         <View style={styles.userOptions}>
-          <View style={{ borderRightWidth: 1, borderColor: 'grey', paddingRight: 8 }}>
+      
+       <TouchableOpacity onPress={Setting} style={styles.userOptions} >
+
+         
+          <View style={{ paddingLeft: 16, paddingRight: 32, }}>
             <Image style={styles.photo}
                source={require('../../../Images/Us.jpg')}
             />
+
           </View>
             <View style={styles.userDescription}>
-               <Text> Username </Text>
-                  <Text> e-mail </Text>
+               <Text style={styles.t1}> Abel Paulo Luzemba </Text>
+                 <Text style={styles.t2}> abelpaulo.2019@gmail.com </Text>
             </View>
+            
+         
+       </TouchableOpacity>
+       <View style={styles.secBody}>
+         <TouchableOpacity style={styles.options}>
+            <Text style={styles.t1} >
+               notificação
+            </Text>
+            <Text style={styles.t2} >
+               Saiba mais sobre a iniciativa dos desenvolvedores
+            </Text>
+         </TouchableOpacity>
+         
+         <TouchableOpacity style={styles.options}>
+            <Text style={styles.t1} >
+               privacidade
+            </Text>
+            <Text style={styles.t2} >
+               Saiba mais sobre a iniciativa dos desenvolvedores
+            </Text>
+         </TouchableOpacity>
+         
+         <TouchableOpacity style={styles.options}>
+            <Text style={styles.t1} >
+               Sobre nós
+            </Text>
+            <Text style={styles.t2} >
+               Saiba mais sobre a iniciativa dos desenvolvedores
+            </Text>
+         </TouchableOpacity>
+         
+         
+         <TouchableOpacity style={styles.options}>
+            <Text style={styles.t1} >
+               partilhe
+            </Text>
+            <Text style={styles.t2} >
+               convide um amigo, ou partilhe com seus amigos
+            </Text>
+         </TouchableOpacity>
+         
          </View>
-
-
       </View>
    )
 }
+
+
 export default Settings;
 const styles = StyleSheet.create({
    body:{
       backgroundColor: '#fff',
       flex: 1,
       
+   },
+   secBody:{
+      padding: 2,
+      alignItems:'center'
    },
    header:{
 
@@ -75,17 +132,39 @@ const styles = StyleSheet.create({
 
    },
    userOptions:{
-      backgroundColor: '#fff',
-      borderColor: 'grey',
-      height: 70,
+     
+      borderColor: '#aaa',
+      height: 100,
       borderBottomWidth: 1,
       flexDirection: 'row',
       alignItems: 'center',
-      padding: 8
+      padding: 10,
+      marginBottom: 32
+      
    },
    photo:{
-      width: 60,
-      height: 60,
+      width: 70,
+      height: 70,
       borderRadius: 100,
+      alignSelf: 'flex-start'
+   },
+   t1:{
+      fontSize: 20,
+      fontWeight: 'bold',
+      fontStyle: 'italic',
+      marginBottom: 5,
+      textTransform: 'capitalize',
+      color:'#152642' 
+   },
+   t2:{
+      color: 'grey',
+      textTransform: 'capitalize'
+   },
+   options:{
+      marginTop: 18,
+      borderColor:'grey',
+      borderBottomWidth: 1,
+      padding: 16,
+      width: '100%',
    }
 })

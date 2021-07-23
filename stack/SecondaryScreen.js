@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {createStackNavigator  } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import TriagemScreen from '../main/Triagem';
+import TriagemScreen from '../src/main/Triagem';
 
 const Stacks = createStackNavigator ();
 
