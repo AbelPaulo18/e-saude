@@ -3,10 +3,8 @@
 /* eslint-disable no-undef */
 import React, { Component, useState } from 'react';
 import { TextInput,Text,TouchableOpacity,Image, StyleSheet,ScrollView, View, Platform, Fragment } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
+import Header from './Header'
 
-import FindScreen from './Consult';
 
 const HospitalScreen = ({navigation}) => {
 
@@ -23,6 +21,10 @@ const HospitalScreen = ({navigation}) => {
          travelTime: 10,
          waitingTime: 25,
          duration: 35,
+         location:{
+            lat: -8.8991421,
+            lng: 13.257459
+         }
       },
       {
          avatar: require('../Images/sP.jpeg'),
@@ -30,6 +32,10 @@ const HospitalScreen = ({navigation}) => {
          travelTime: 25,
          waitingTime: 25,
          duration: 50,
+         location:{
+            lat: -8.9252383,
+            lng: 13.1822045
+         }
       },
       {
          avatar: require('../Images/multiperfil.jpeg'),
@@ -37,6 +43,10 @@ const HospitalScreen = ({navigation}) => {
          travelTime: 20,
          waitingTime: 25,
          duration: 45,
+         location:{
+            lat: -8.8926396,
+            lng: 13.1860798,
+         }
       },
       {
          avatar: require('./logo/phone_plus.png'),
@@ -44,13 +54,10 @@ const HospitalScreen = ({navigation}) => {
          travelTime: 10,
          waitingTime: 75,
          duration: 85,
-      },
-      {
-         avatar: require('../Images/home.png'),
-         title: 'Clínica Abel Paulo',
-         travelTime: 40,
-         waitingTime: 25,
-         duration: 65,
+         location:{
+            lat: -8.8297149,
+            lng: 13.2476439
+         }
       },
       {
          avatar: require('../Images/settings.png'),
@@ -58,6 +65,10 @@ const HospitalScreen = ({navigation}) => {
          travelTime: 30,
          waitingTime: 25,
          duration: 55,
+         location:{
+            lat: -8.8258042,
+            lng: 13.2369308
+         }
       },
    ])
 
@@ -66,51 +77,7 @@ const HospitalScreen = ({navigation}) => {
          <View style ={ styles.body } >
 
 
-         <View style={styles.header}>
-
-            <TouchableOpacity style={{
-               alignItems: 'center',
-               justifyContent:'center'
-            }}
-            onPress={()=>{navigation.openDrawer()}}
-             >
-               <Feather
-                  name = 'menu'
-                  size={32}
-               />
-            </TouchableOpacity>
-
-           
-            <View style={{
-               alignItems: 'center',
-               justifyContent:'flex-end'
-            }}>
-               <Image
-                  source={require('./logo/phone_plus.png')}
-                  style={{
-                     height: 32,
-                     width: 32
-                  }}
-               />
-            <Text>é-Saúde</Text>
-   
-            </View>
-
-            <TouchableOpacity style={{
-               alignItems: 'center',
-               justifyContent:'center'
-            }} 
-               onPress={()=> setSearchActive(!searchActive)}
-            >
-               <Feather
-                  name = 'search'
-                  size={32}
-               />
-            </TouchableOpacity>
-
-
-         </View>
-
+            <Header navigation={navigation} />
            {
               searchActive ? (
                  
@@ -132,7 +99,13 @@ const HospitalScreen = ({navigation}) => {
                { 
                   data.map( (item, index) => (
                      <TouchableOpacity style={styles.containerItems} key={`${item.title}`} 
-                     onPress={MapPress}
+                     onPress={( ) => {
+                        navigation.navigate('Maps',{
+                           params: {
+                              location:2345
+                           }
+                        })
+                     }}
                      >
 
                   <View style={styles.logoItem}>
@@ -174,11 +147,7 @@ const HospitalScreen = ({navigation}) => {
                </TouchableOpacity>
                   ))
                 }
-
             </ScrollView>
-
-            
-
          </View>         
    )
 }
@@ -191,12 +160,9 @@ const styles = StyleSheet.create({
 
       alignItems: 'center',
       flex: 1,
-      backgroundColor:'#fff',
+      backgroundColor:'#FFF',
             
    },
-
-
-
    header:{
 
       padding: 8,
@@ -229,7 +195,7 @@ const styles = StyleSheet.create({
       borderBottomColor: 'rgb(22,173,225)'
       },
       containerItems:{
-
+         
          width: '95%',
          backgroundColor: 'white',
          flexDirection: 'row',
@@ -238,8 +204,16 @@ const styles = StyleSheet.create({
          marginTop: 8,
          borderRadius: 8,
          elevation: 4,
-         alignSelf: 'center'
-
+         alignSelf: 'center',
+         
+            shadowColor:'#171717',
+            shadowOffset: {
+               width:2, 
+               height: 0
+            }, 
+            shadowOpacity: 0.4, 
+            shadowRadius: 3
+         
       },
       
    logoItem: {
@@ -284,18 +258,20 @@ durationItem: {
 
 time:{
    fontWeight: 'bold',
-   color: 'grey'
+   color: 'grey',
+   textAlign: 'center'
 },
 title: {
    textTransform: 'uppercase',
-   color:'#ddd',
+   color:'#333',
    fontSize: 12,
-   textAlign: 'left'
+   textAlign: 'center'
 },
 timeT: {
   fontSize: 22,
   color: 'lightblue',
   fontWeight: 'bold',
+  textAlign: 'center'
  
 }
 

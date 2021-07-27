@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Animatable from 'react-native-animatable';
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground';
-
+import Header from '../../Header'
 const FamilyScreens = ({navigation})=>{
    
 const [data,setData] = useState([
@@ -48,36 +48,7 @@ const [data,setData] = useState([
 
       <View style={styles.body}>
        
-       <View style={styles.header}>
-
-            <TouchableOpacity style={{
-               alignItems: 'center',
-               justifyContent:'center'
-            }}
-                onPress ={()=>{navigation.openDrawer()}}
-             >
-          <Feather
-            name = 'menu'
-            size={32}
-          />
-            </TouchableOpacity>
-
-
-         <View style={{
-            alignItems: 'center',
-            justifyContent:'flex-end'
-         }}>
-         <Image
-            source={require('../../logo/phone_plus.png')}
-            style={{
-               height: 32,
-               width: 32
-            }}
-         />
-            <Text>é-Saúde</Text>
-
-         </View>
-         </View>
+         <Header navigation={navigation} />
 
          <ImageBackground style={styles.picture} source={require('../../../Images/B1.jpg')}>
             <View style={{padding: 4}}>

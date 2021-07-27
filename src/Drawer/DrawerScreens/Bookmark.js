@@ -4,7 +4,7 @@ import { Text,ImageBackground, StyleSheet, View,Platform, Image} from 'react-nat
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Feather from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable';
-
+import Header from '../../Header'
 const Bookmark = ({navigation})=> {
     
    const [still, setstill] = useState(false)
@@ -19,36 +19,7 @@ const Bookmark = ({navigation})=> {
    return(
       <View style={styles.body}>
          
-         <View style={styles.header}>
-
-            <TouchableOpacity style={{
-               alignItems: 'center',
-                 justifyContent:'center'
-             }}
-             onPress ={()=>{navigation.openDrawer()}}
-            >
-               <Feather
-                  name = 'menu'
-                  size={32}
-               />
-            </TouchableOpacity>
-
-
-         <View style={{
-            alignItems: 'center',
-            justifyContent:'flex-end'
-         }}>
-               <Image
-                  source={require('../../logo/phone_plus.png')}
-                  style={{
-                      height: 32,
-                      width: 32
-                  }}
-         />
-         <Text>é-Saúde</Text>
-
-         </View>
-      </View>
+         <Header navigation={navigation} />
          
          <View style={{flex: 1}}>
       <ImageBackground source={require('../../../Images/B2.png')} style={styles.picture}>          

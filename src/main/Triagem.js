@@ -3,6 +3,7 @@ import React, { Component, useState } from 'react';
 import { Text, Image,StyleSheet, View,TouchableOpacity, TextInput ,Button,Platform, ScrollView} from 'react-native';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
+import Header from '../Header';
 
 
 const TriagemScreen = ({navigation}) => {
@@ -50,43 +51,7 @@ const TriagemScreen = ({navigation}) => {
 
          <View style ={styles.body}>
 
-<View style={styles.header}>
-
-<TouchableOpacity style={{
-   alignItems: 'center',
-   justifyContent:'center'
-}}
-  onPress ={()=>{navigation.openDrawer()}}
- >
-   <Feather
-      name = 'menu'
-      size={32}
-   />
-</TouchableOpacity>
-
-
-<View style={{
-   alignItems: 'center',
-   justifyContent:'flex-end'
-}}>
-   <Image
-      source={require('../logo/phone_plus.png')}
-      style={{
-         height: 32,
-         width: 32
-      }}
-   />
-     <Text>é-Saúde</Text>
-
-</View>
-
-      
-   <FontAwesome5Icon
-      name = 'fire'
-      size={32}
-   />
-
-</View>
+            <Header navigation={navigation} />
 
                <View style={{height: 100,
                width: '100%',

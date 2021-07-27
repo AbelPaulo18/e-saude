@@ -13,6 +13,7 @@ import Settings from './src/Drawer/DrawerScreens/Settings';
 import HospitalScreen from './src/HospitalScreen';
 import PerfilScreen from './src/OptionScreens/Perfil';
 import OptScreens from './src/OptionScreens/OptSecreens';
+import Header from './src/Header'
 
 const Drawer = createDrawerNavigator();
 
@@ -43,6 +44,15 @@ const Apps = ()=> {
             }
          }
             />
+            <Drawer.Screen
+               name='Header'
+               component={Header}
+                options ={
+            {
+               header : ()=> null
+            }
+         }
+            />
 
         <Drawer.Screen
                name='Maps'
@@ -50,7 +60,10 @@ const Apps = ()=> {
                options ={
             {
                headerTitleAlign: 'center',
-               headerTitle: 'Mapa'
+               headerTitle: 'Mapa',
+               headerStyle:{
+                  backgroundColor:"#FFF"
+               }
             }
          }
             />

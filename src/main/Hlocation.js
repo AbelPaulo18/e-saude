@@ -1,61 +1,20 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text,Image,TouchableOpacity,Platform,ScrollView ,StyleSheet, View } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-//import MapView from 'react-native-maps';
+import Header from '../Header'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
-const LocationMap = ({navigation})=> {
+const LocationMap = ({navigation, location})=> {
+console.log("HELLO",location)
+
    return(
 <View style={styles.body}>
-<View style={styles.header}>
 
-   <TouchableOpacity style={{
-      alignItems: 'center',
-      justifyContent:'center'
-   }}
-   onPress ={()=>{navigation.openDrawer()}}
-    >
-      <Feather
-         name = 'menu'
-         size={32}
-      />
-   </TouchableOpacity>
-
-
-   <View style={{
-      alignItems: 'center',
-      justifyContent:'flex-end'
-   }}>
-      <Image
-         source={require('../logo/phone_plus.png')}
-         style={{
-            height: 32,
-            width: 32
-         }}
-      />
-        <Text>é-Saúde</Text>
-
-   </View>
-
-         
-      <FontAwesome5Icon
-         name = 'fire'
-         size={32}
-      />
-
-</View>
-
-
-               <View style={styles.pop}> 
-                  <Text> Map Info Like :: </Text> 
-                  <Text> Description and other cool things</Text> 
-               </View>
-
+               
+<Header navigation={navigation} />
       <View style={styles.container}>
       <MapView
-        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+         // remove if not using Google Maps
         style={styles.map}
         region={{
           latitude: 37.78825,
@@ -164,7 +123,7 @@ const styles = StyleSheet.create({
    },
    menuIcon:{
 
-      elevation: 1,
+      
       backgroundColor: '#eee',
       borderRadius: 4,
       justifyContent: 'center',
